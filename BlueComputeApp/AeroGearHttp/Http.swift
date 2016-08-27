@@ -138,7 +138,7 @@ public class Http {
                 task = self.session.uploadTaskWithStreamedRequest(request)
                 delegate = TaskUploadDelegate()
             } else {
-                print("Authorization Header: \(self.authzModule?.authorizationFields())")
+                //print("Authorization Header: \(self.authzModule?.authorizationFields())")
                 
                 
                 // TO DO: Remove this code from external library

@@ -70,6 +70,8 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        print("showing product detail for itemId: \(self.item.id)")
+        
         reviewTable.delegate = self
         reviewTable.dataSource = self
         
@@ -77,7 +79,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         let appDelegate : AppDelegate = AppDelegate().sharedInstance()
         var reviewRestUrl: String = appDelegate.userDefaults.objectForKey("reviewRestUrl") as! String
         
-        reviewRestUrl += "/api/reviews?filter={\"where\":{\"itemId\":\(self.item.id)}}"
+        reviewRestUrl += "/api/reviews/list?itemId=\(self.item.id)"
         let finalreviewUrl = reviewRestUrl.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         
         //Set up REST framework
@@ -99,9 +101,10 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
                     
                     let resArry = response as! NSArray
                     //let descrip: String = resArry![0].objectForKey("description") as! String
+                    
                     for respItem in resArry {
                         
-                       let newReview = Review(itemID: respItem.objectForKey("itemId") as! Int, itemRating: respItem.objectForKey("rating") as! Double, comments: respItem.objectForKey("comment") as! String, email: respItem.objectForKey("reviewer_email") as! String, name: respItem.objectForKey("reviewer_name") as! String, id: respItem.objectForKey("id") as! Int)
+                       let newReview = Review(itemID: respItem.objectForKey("itemId") as! Int, itemRating: respItem.objectForKey("rating") as! Double, comments: respItem.objectForKey("comment") as! String, email: respItem.objectForKey("reviewer_email") as! String, name: respItem.objectForKey("reviewer_name") as! String, id: respItem.objectForKey("_Id") as! String)
                         
                        self.reviewList.append(newReview)
                        self.reviewTable.reloadData()
