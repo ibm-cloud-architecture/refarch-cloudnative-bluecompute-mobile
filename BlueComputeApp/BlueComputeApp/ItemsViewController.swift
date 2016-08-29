@@ -53,7 +53,7 @@ class ItemsViewController: UITableViewController {
         cell.priceLabel.text = "$\(item.price)"
         
         // Retrieve image from Server store
-        let imageUrl = self.itemRestUrl + "/" + item.image
+        let imageUrl = self.itemRestUrl + item.image
         let request = NSMutableURLRequest(URL: NSURL(string: imageUrl)!)
         
         //Set the API clientId header
@@ -119,7 +119,7 @@ class ItemsViewController: UITableViewController {
                     let resArry = response as! NSArray
                     for respItem in resArry {
                         
-                        let newItem = Item(name: respItem.objectForKey("name") as! String, desc: respItem.objectForKey("description") as! String, altImage: respItem.objectForKey("img") as? String, price: respItem.objectForKey("price") as! Int, rating: respItem.objectForKey("rating") as! Int, id: respItem.objectForKey("id") as! Int, image: respItem.objectForKey("img") as! String)
+                        let newItem = Item(name: respItem.objectForKey("name") as! String, desc: respItem.objectForKey("description") as! String, altImage: respItem.objectForKey("imgAlt") as? String, price: respItem.objectForKey("price") as! Int, id: respItem.objectForKey("id") as! Int, image: respItem.objectForKey("img") as! String)
                         self.storeItems.append(newItem)
                         self.tableView.reloadData()
                     }
