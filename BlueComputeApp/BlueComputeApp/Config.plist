@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>oAuthRestUrl</key>
-	<string>https://api.us.apiconnect.ibmcloud.com/gangchenusibmcom-apic/apicstore-catalog</string>
+	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-dev/bluecompute</string>
 	<key>clientId</key>
-	<string>4e4a50bc-ed98-498f-bbab-ae9de5af656d</string>
+	<string>3f1b4cc8-78dc-450e-9461-edf377105c7a</string>
 	<key>clientSecret</key>
 	<string></string>
 	<key>itemRestUrl</key>
@@ -13,7 +13,7 @@
 	<key>reviewRestUrl</key>
 	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-dev/bluecompute</string>
 	<key>oauthBaseUrl</key>
-	<string>https://api.us.apiconnect.ibmcloud.com/gangchenusibmcom-apic/apicstore-catalog</string>
+	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-dev/bluecompute</string>
 	<key>oauthRedirectUri</key>
 	<string>org.apic://example.com</string>
 </dict>

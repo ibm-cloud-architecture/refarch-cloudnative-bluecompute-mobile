@@ -42,7 +42,7 @@ class AddReviewController: UIViewController, UITextViewDelegate {
         //var reviewRestUrl: String = "https://api.us.apiconnect.ibmcloud.com/gangchenusibmcom-dev/inventory-catalog"
         
         
-        reviewRestUrl += "/api/reviews"
+        reviewRestUrl += "/api/reviews/comment"
         print("Review REST endpoint is : \(reviewRestUrl)")
         
         //Define Parameters
@@ -89,7 +89,7 @@ class AddReviewController: UIViewController, UITextViewDelegate {
             // Initiate the OAuth flow
             //let appDelegate : AppDelegate = AppDelegate().sharedInstance()
             var oAuthRestUrl: String = appDelegate.userDefaults.objectForKey("oAuthRestURL") as! String
-            oAuthRestUrl += "/api/oauth"
+            oAuthRestUrl += "/api/reviews/oauth"
             print("OAuth REST endpoint is : \(oAuthRestUrl)")
             
             self.initOauth(oAuthRestUrl, parameters: nil)
