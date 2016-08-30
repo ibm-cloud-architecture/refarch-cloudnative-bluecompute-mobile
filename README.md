@@ -59,7 +59,7 @@ This project uses Bluemix Mobile Analytic Service to capture the Application ana
 
   *Please note down your Service credential particularly the API key, you need to use it to configure your Mobile application later*
 
-  - Install the Mobile Analytics client SDK (iOS)
+ - Install the Mobile Analytics client SDK (iOS)
 
   In order to install Mobile Analytics client SDK, you need to have either Cocopods or Carthage dependency management tool installed locally.
 
@@ -71,7 +71,7 @@ This project uses Bluemix Mobile Analytic Service to capture the Application ana
 
   Once the SDK installed, always start your iOS project using the `BlueComputeApp.xcworkspace`.
 
-  - Instrument the application to send analytics information to Bluemix
+ - Instrument the application to send analytics information to Bluemix
 
  You need to configure the Mobile Analytics API Key, open the `BlueComputeApp\Supporting Files\Config.plist`  
  Update the `mobileanalyticKey` field with your API key. Save the file.
@@ -93,14 +93,14 @@ This project uses Bluemix Mobile Analytic Service to capture the Application ana
 
     `Analytics.send()`
 
-  - Run the application
+ - Run the application
 
   Follow the instruction above to run the BlueComputeApp.
 
-  - View the analytics information on Bluemix
+ - View the analytics information on Bluemix
 
   Go to the Mobile Analytics Dashboard to see usage analytics, such as new devices and total devices using the application. You can also monitor your app by setting alerts and monitoring app crashes.
 
   Feel free to navigate the Analytic dashboard:
 
-  ![Analytics Dashboard](static/imgs/bluemix_24.png?raw=true) 
+  ![Analytics Dashboard](static/imgs/bluemix_24.png?raw=true)
