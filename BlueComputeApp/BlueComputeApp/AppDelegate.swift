@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import BMSCore
+import BMSAnalytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,8 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let clientId: String = dict!.objectForKey("clientId") as! String
         let baseUrl: String = dict!.objectForKey("oauthBaseUrl") as! String
         let redirectUrl: String = dict!.objectForKey("oauthRedirectUri") as! String
+        let mobileanalyticKey: String = dict!.objectForKey("mobileanalyticKey") as! String
         
-        print("Read plist: \(itemRestUrl)")
+        print("Prepare Bluemix Mobile Analytics Service")
+        let appName = "BlueCompute App"
+        
+        BMSClient.sharedInstance.initializeWithBluemixAppRoute(nil, bluemixAppGUID: nil, bluemixRegion: BMSClient.REGION_US_SOUTH) //You can change the region
+        Analytics.initializeWithAppName(appName, apiKey: mobileanalyticKey, deviceEvents: DeviceEvent.LIFECYCLE)
         
         // set HTTP object to AppDelegate
         self.http = Http()
@@ -58,6 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         prepareDefaultSettings()
+        Analytics.send()
         return true
     }
 

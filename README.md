@@ -51,3 +51,56 @@ Click Add will navigate you back to the item detail page where you should see yo
 Feel free to play around and explore the mobile inventory application.
 
 ## View analytic information for the Mobile Application
+
+This project uses Bluemix Mobile Analytic Service to capture the Application analytics information. For the service detail, please check https://new-console.ng.bluemix.net/docs/services/mobileanalytics/index.html.
+
+ - Provision Bluemix Mobile Analytics service
+  You can create an instance of the Mobile Analytics service using Bluemix console (under Catalog -> Mobile section). Once created, you can access the Mobile Analytics Console by clicking your tile in the Services section of the IBM® Bluemix® Dashboard.
+
+  *Please note down your Service credential particularly the API key, you need to use it to configure your Mobile application later*
+
+  - Install the Mobile Analytics client SDK (iOS)
+
+  In order to install Mobile Analytics client SDK, you need to have either Cocopods or Carthage dependency management tool installed locally.
+
+  You can read more about the SDK installation [here](https://new-console.ng.bluemix.net/docs/services/mobileanalytics/install-client-sdk.html)
+
+  Install the SDK:  
+     `$ cd BlueComputeApp`  
+     `$ pod install`  
+
+  Once the SDK installed, always start your iOS project using the `BlueComputeApp.xcworkspace`.
+
+  - Instrument the application to send analytics information to Bluemix
+
+ You need to configure the Mobile Analytics API Key, open the `BlueComputeApp\Supporting Files\Config.plist`  
+ Update the `mobileanalyticKey` field with your API key. Save the file.
+
+  **The git project already has the instrumentation added, just review the code**
+
+  Open the `BlueComputeApp\AppDelegate.swift`, you will see the Bluemix analytics added:
+
+  `import BMSCore`  
+  `import BMSAnalytics`  
+
+  Under the function `prepareDefaultSettings`, we initialize the Mobile Analytic client:
+
+  `BMSClient.sharedInstance.initializeWithBluemixAppRoute(nil, bluemixAppGUID: nil, bluemixRegion:   
+   BMSClient.REGION_US_SOUTH) //You can change the region  
+   Analytics.initializeWithAppName(appName, apiKey: mobileanalyticKey, deviceEvents: DeviceEvent.LIFECYCLE)`  
+
+   You can use the `Analytics.send` method to send analytics data to the server. As following code under `application(_:didFinishLaunchingWithOptions:)` method:
+
+    `Analytics.send()`
+
+  - Run the application
+
+  Follow the instruction above to run the BlueComputeApp.
+
+  - View the analytics information on Bluemix
+
+  Go to the Mobile Analytics Dashboard to see usage analytics, such as new devices and total devices using the application. You can also monitor your app by setting alerts and monitoring app crashes.
+
+  Feel free to navigate the Analytic dashboard:
+
+  ![Analytics Dashboard](static/imgs/bluemix_24.png?raw=true) 

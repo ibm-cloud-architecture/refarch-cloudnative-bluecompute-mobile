@@ -16,5 +16,7 @@
 	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-dev/bluecompute</string>
 	<key>oauthRedirectUri</key>
 	<string>org.apic://example.com</string>
+	<key>mobileanalyticKey</key>
+	<string>b98aa344-c133-4cfd-ab40-f679d63ec141</string>
 </dict>
 </plist>

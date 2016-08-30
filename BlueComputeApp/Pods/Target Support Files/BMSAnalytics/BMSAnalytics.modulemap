@@ -1,0 +1,6 @@
+framework module BMSAnalytics {
+  umbrella header "BMSAnalytics-umbrella.h"
+
+  export *
+  module * { export * }
+}
