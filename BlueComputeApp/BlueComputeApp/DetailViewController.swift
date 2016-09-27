@@ -46,7 +46,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         let itemRestUrl = appDelegate.userDefaults.objectForKey("itemRestUrl") as! String
         
         
-        let imageUrl = itemRestUrl + "/" + self.item.image
+        let imageUrl = itemRestUrl + self.item.image
         let request = NSMutableURLRequest(URL: NSURL(string: imageUrl)!)
         
         //Set the API clientId header

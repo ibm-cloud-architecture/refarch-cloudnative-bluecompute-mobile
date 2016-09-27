@@ -53,7 +53,7 @@ class ItemsViewController: UITableViewController {
         cell.priceLabel.text = "$\(item.price)"
         
         // Retrieve image from Server store
-        let imageUrl = self.itemRestUrl + "/" + item.image
+        let imageUrl = self.itemRestUrl + item.image
         let request = NSMutableURLRequest(URL: NSURL(string: imageUrl)!)
         
         //Set the API clientId header

@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>oAuthRestUrl</key>
-	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-dev/bluecompute</string>
+	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-qa/bluecompute</string>
 	<key>clientId</key>
-	<string>3f1b4cc8-78dc-450e-9461-edf377105c7a</string>
+	<string></string>
 	<key>clientSecret</key>
 	<string></string>
 	<key>itemRestUrl</key>
-	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-dev/bluecompute</string>
+	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-qa/bluecompute</string>
 	<key>reviewRestUrl</key>
-	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-dev/bluecompute</string>
+	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-qa/bluecompute</string>
 	<key>oauthBaseUrl</key>
-	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-dev/bluecompute</string>
+	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-qa/bluecompute</string>
 	<key>oauthRedirectUri</key>
 	<string>org.apic://example.com</string>
 	<key>mobileanalyticKey</key>
-	<string>b98aa344-c133-4cfd-ab40-f679d63ec141</string>
+	<string></string>
 </dict>
 </plist>

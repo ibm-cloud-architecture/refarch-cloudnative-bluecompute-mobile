@@ -131,7 +131,7 @@ public class ApicOAuth2Module: OAuth2Module {
         //print("Extract Access token")
         let url: NSURL? = (notification.userInfo as! [String: AnyObject])[UIApplicationLaunchOptionsURLKey] as? NSURL
         
-        //print("Extract Url \(url)")
+        print("Extract Auth Url \(url)")
         // extract the code from the URL
         //let code = self.parametersFromQueryString(url?.query)["code"]
         
