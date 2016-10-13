@@ -112,10 +112,10 @@ Follow these steps to load the sample Android project into Android Studio. This 
 
 1. Clone this git repository
 
-        git clone https://github.com/vbudi000/refarch-cloudnative-bluecompute-android
+        git clone https://github.com/ibm-cloud-architecture/refarch-cloudnative-bluecompute-mobile
 2. Open Android Studio; from the initial window, select __Open an existing Android Studio__ project.
 ![android-studio-1.png](static/imgs/android-studio-1.png)
-3. Choose the directory of `refarch-cloudnative-bluecompute-android\OmniChannel`
+3. Choose the directory of `refarch-cloudnative-bluecompute-mobile\android\BlueComputeApp`
 ![android-studio-2.png](static/imgs/android-studio-2-open-OmniChannel.png)
 3. Edit the BlueCompute1\src\main\assets\config.properties file to match your API Connect URL and client ID
 ![android-studio-3.png](static/imgs/android-studio-3-config-properties.png)
