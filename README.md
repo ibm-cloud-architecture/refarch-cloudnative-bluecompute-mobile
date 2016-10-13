@@ -105,3 +105,24 @@ This project uses Bluemix Mobile Analytic Service to capture the Application ana
   Feel free to navigate the Analytic dashboard:
 
   ![Analytics Dashboard](static/imgs/bluemix_24.png?raw=true)
+
+## Run Android application
+
+Follow these steps to load the sample Android project into Android Studio. This sample is built using the Android Studio and Android SDK level 24. 
+
+1. Clone this git repository
+
+        git clone https://github.com/vbudi000/refarch-cloudnative-bluecompute-android
+2. Open Android Studio; from the initial window, select __Open an existing Android Studio__ project.
+![android-studio-1.png](static/imgs/android-studio-1.png)
+3. Choose the directory of `refarch-cloudnative-bluecompute-android\OmniChannel`
+![android-studio-2.png](static/imgs/android-studio-2-open-OmniChannel.png)
+3. Edit the BlueCompute1\src\main\assets\config.properties file to match your API Connect URL and client ID
+![android-studio-3.png](static/imgs/android-studio-3-config-properties.png)
+4. Save the file using `Ctrl-S`
+4. Build and run the application, there are 2 options:
+
+   - Using the Android emulator: use __Run__ > __Run BlueCompute1__ and choose your virtual device
+   - Using your own Android device (or Nox or BlueStack), you can generate an apk file: use __Build__ > __Build APK__
+   
+Note that currently __Back__ button navigation is not supported and also there are very limited error checking and recovery in the code. 
