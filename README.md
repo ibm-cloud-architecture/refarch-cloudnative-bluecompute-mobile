@@ -3,7 +3,8 @@
 *This project is part of the 'IBM Cloud Native Reference Architecture' suite, available at
 https://github.com/ibm-cloud-architecture/refarch-cloudnative*
 
-The BlueCompute app is an iOS application developed in Swift 2.0. It is built to demonstrate the following capability on IBM Cloud:
+
+The BlueCompute app consists of an iOS and Android version. The iOS application is developed in Swift 2.0. The mobile apps were built to demonstrate the following capability on IBM Cloud:
 
  - Access the omnichannel enabled APIs through IBM API Connect on Bluemix
  - OAuth implementation using IBM API Connect as OAuth provider
@@ -14,7 +15,7 @@ The BlueCompute app is an iOS application developed in Swift 2.0. It is built to
 
 Note this section requires an Apple computer running MacOS with Apple Xcode IDE installed.
 
-1. In Finder, navigate to the folder BlueComputeApp in the GIT repository.
+1. In Finder, navigate to the folder iOS/BlueComputeApp in the GIT repository.
 2. Double click the "BlueComputeApp.xcodeproj" file to open the iOS project in Xcode.
 3. You need to specify the API endpoint configuration for your Bluemix API Connect deployment.  Edit the BlueComputeApp / Supporting Files / Config.plist file. The Config.plist file contains all of the API endpoint URLs as well as the clientId registered earlier in Developer Portal.
 
