@@ -47,6 +47,10 @@ public class ItemList extends AppCompatActivity {
     InventoryItem[] values;
 
     @Override
+    public void onBackPressed() {
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_list);

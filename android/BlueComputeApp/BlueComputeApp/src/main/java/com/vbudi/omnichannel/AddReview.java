@@ -84,6 +84,10 @@ public class AddReview extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
     public void loadItemDetail() {
         Intent intent = new Intent(this, ItemDetail.class);
         startActivity(intent);
@@ -107,8 +111,8 @@ public class AddReview extends AppCompatActivity {
 
             // add request header
             try {
-                String name = URLEncoder.encode(urls[1],"UTF-8");
-                String comment = URLEncoder.encode(urls[2],"UTF-8");
+                String name = urls[1];
+                String comment = urls[2].replaceAll("\\r\\n|\\r|\\n|\\t", " ");
                 String rating = urls[3];
                 String itemIdStr = urls[4];
 

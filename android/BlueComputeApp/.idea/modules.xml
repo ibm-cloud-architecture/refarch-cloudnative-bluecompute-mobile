@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BlueCompute1/BlueCompute1.iml" filepath="$PROJECT_DIR$/BlueCompute1/BlueCompute1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BlueComputeApp/BlueComputeApp.iml" filepath="$PROJECT_DIR$/BlueComputeApp/BlueComputeApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/OmniChannel.iml" filepath="$PROJECT_DIR$/OmniChannel.iml" />
     </modules>
   </component>

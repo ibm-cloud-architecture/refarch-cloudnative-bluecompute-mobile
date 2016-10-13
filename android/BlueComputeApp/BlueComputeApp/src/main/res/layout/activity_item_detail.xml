@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_item_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.vbudi.omnichannel.ItemDetail">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/itemData"
+            android:layout_weight="60">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher"
+                    android:id="@+id/itemImage"
+                    android:layout_alignTop="@+id/itemPrice"
+                    android:layout_toRightOf="@+id/itemDescription"
+                    android:layout_toEndOf="@+id/itemDescription"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignStart="@+id/itemName"
+                    android:layout_alignParentStart="false" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="1dp"
+                    android:id="@+id/itemName"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="?android:attr/colorPrimaryDark" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="35dp"
+                    android:id="@+id/rating"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:numStars="5" />
+                <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="85dp"
+                android:layout_marginLeft="200dp"
+                android:id="@+id/itemPrice"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:minWidth="150dp"
+                android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="180dp"
+                    android:id="@+id/itemDescription"
+                    android:minHeight="160dp" />
+            </RelativeLayout>
+        </ScrollView>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reviewList"
+            android:background="#DDDDFF"
+            android:layout_weight="30" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10">
+
+            <Button
+                android:text="Inventory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="1dp"
+                android:onClick="loadInventory"
+                android:id="@+id/back"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="Add review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="addReview"
+                android:id="@+id/button"
+                android:layout_marginBottom="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
