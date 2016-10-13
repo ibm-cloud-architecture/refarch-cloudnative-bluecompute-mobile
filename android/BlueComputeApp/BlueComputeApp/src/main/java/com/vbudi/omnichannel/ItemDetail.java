@@ -1,20 +1,27 @@
 package com.vbudi.omnichannel;
 
+import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import org.apache.http.HttpResponse;
@@ -42,6 +49,7 @@ public class ItemDetail extends AppCompatActivity {
     String apicClientId;
 
     @Override
+    @TargetApi(17)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
@@ -51,8 +59,6 @@ public class ItemDetail extends AppCompatActivity {
         apicUrl = sp.getString("apicUrl",null);
         apicClientId = sp.getString("apicClientId",null);
         itemId = sp.getInt("itemId", 999);
-
-        System.out.println(">>>"+itemId+">>>"+apicUrl);
 
         new LoadItem().execute(apicUrl+"/api/items/"+itemId);
         new LoadReviews().execute(apicUrl+"/api/reviews/list?itemId="+itemId);
@@ -69,10 +75,30 @@ public class ItemDetail extends AppCompatActivity {
         img.setImageBitmap(itemPicture);
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
     public void displayReviewFields(ReviewItem[] reviews) {
         ListView lv = (ListView) this.findViewById(R.id.reviewList);
 
         ReviewTile adapter = new ReviewTile(ItemDetail.this, android.R.id.text1, reviews);
+        int numRev = reviews.length;
+        float starVal=0;
+        if (numRev>0)  {
+            for (int i=0;i<numRev; i++) {
+                starVal += reviews[i].getRating();
+            }
+            starVal = starVal / numRev;
+        }
+        RatingBar rb = (RatingBar) this.findViewById(R.id.rating);
+        rb.setRating(starVal);
+        rb.setFocusable(false);
+        rb.setOnTouchListener(new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        });
         lv.setAdapter(adapter);
     }
 
@@ -105,8 +131,13 @@ public class ItemDetail extends AppCompatActivity {
             if (rev != null) {
                 TextView desc = (TextView) v.findViewById(R.id.description);
                 TextView name = (TextView) v.findViewById(R.id.name);
-                TextView rating = (TextView) v.findViewById(R.id.rating);
-
+                RatingBar rating = (RatingBar) v.findViewById(R.id.rating);
+                rating.setOnTouchListener(new View.OnTouchListener() {
+                    public boolean onTouch(View v, MotionEvent event) {
+                        return true;
+                    }
+                });
+                rating.setFocusable(false);
                 if (desc != null) {
                     desc.setText(rev.getComment());
                 }
@@ -114,7 +145,7 @@ public class ItemDetail extends AppCompatActivity {
                     name.setText(rev.getName());
                 }
                 if (rating != null) {
-                    rating.setText("Rating: " + rev.getRating());
+                    rating.setRating(rev.getRating());
                 }
             }
             return v;
