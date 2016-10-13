@@ -126,3 +126,7 @@ Follow these steps to load the sample Android project into Android Studio. This 
    - Using your own Android device (or Nox or BlueStack), you can generate an apk file: use __Build__ > __Build APK__
    
 Note that currently __Back__ button navigation is not supported and also there are very limited error checking and recovery in the code. 
+
+The following shows the screen captures for the List of items, Item details and Add review. The oAuth authentication pages are the same as the iOS one. 
+
+![android-studio-emulator.png](static/imgs/android-studio-emulator.png)
