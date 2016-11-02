@@ -154,7 +154,7 @@ public class ItemList extends AppCompatActivity {
                             item.optString("img"),
                             item.optString("description"),
                             item.optInt("price"));
-                    URL newurl = new URL(apicUrl+item.optString("img"));
+                    URL newurl = new URL(apicUrl+"/"+item.optString("img"));
                     itemPicture[i] = BitmapFactory.decodeStream(newurl.openConnection().getInputStream());
                 }
 
