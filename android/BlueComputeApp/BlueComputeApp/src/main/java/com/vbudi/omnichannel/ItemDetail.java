@@ -188,7 +188,7 @@ public class ItemDetail extends AppCompatActivity {
 
                 try {
                     jr = new JSONObject(result.toString());
-                    URL newurl = new URL(apicUrl+jr.optString("img"));
+                    URL newurl = new URL(apicUrl+"/"+jr.optString("img"));
                     itemPicture = BitmapFactory.decodeStream(newurl.openConnection().getInputStream());
 
                     item = new InventoryItem(jr.optInt("id"),
