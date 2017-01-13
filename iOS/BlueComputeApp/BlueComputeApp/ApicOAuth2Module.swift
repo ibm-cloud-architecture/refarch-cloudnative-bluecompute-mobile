@@ -61,7 +61,7 @@ public class ApicOAuth2Module: OAuth2Module {
             completionHandler(nil, error)
             return
         }
-        let url = NSURL(string:computedUrl.absoluteString + params)
+        let url = NSURL(string:computedUrl.absoluteString! + params)
         //print("OAuth url \(url)")
         if let url = url {
             if self.webView != nil {
