@@ -121,7 +121,7 @@ public class OAuth2Module: AuthzModule {
             completionHandler(nil, error)
             return
         }
-        let url = NSURL(string:computedUrl.absoluteString + params)
+        let url = NSURL(string:computedUrl.absoluteString! + params)
         if let url = url {
             if self.webView != nil {
                 self.webView!.targetURL = url
