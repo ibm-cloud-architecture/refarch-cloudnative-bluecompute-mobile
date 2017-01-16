@@ -4,7 +4,7 @@
 https://github.com/ibm-cloud-architecture/refarch-cloudnative*
 
 
-The BlueCompute app consists of an iOS and Android version. The iOS application is developed in Swift 2.0. The mobile apps were built to demonstrate the following capability on IBM Cloud:
+The BlueCompute app consists of an iOS and Android version. The iOS application is developed in Swift 3.0 with support for older versions. The mobile apps were built to demonstrate the following capability on IBM Cloud:
 
  - Access the omnichannel enabled APIs through IBM API Connect on Bluemix
  - OAuth implementation using IBM API Connect as OAuth provider
@@ -14,6 +14,10 @@ The BlueCompute app consists of an iOS and Android version. The iOS application 
 ## Run the iOS application
 
 Note this section requires an Apple computer running MacOS with Apple Xcode IDE installed.
+
+First Install the SDK:  
+ `$ cd iOS/BlueComputeApp`  
+ `$ pod install` 
 
 1. In Finder, navigate to the folder iOS/BlueComputeApp in the GIT repository.
 2. Double click the "BlueComputeApp.xcodeproj" file to open the iOS project in Xcode.

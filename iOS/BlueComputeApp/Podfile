@@ -4,6 +4,6 @@
 use_frameworks!
 
 target 'BlueComputeApp' do
-  pod 'BMSCore', '~> 1.0.3'
+  pod 'BMSCore'
   pod 'BMSAnalytics'
 end

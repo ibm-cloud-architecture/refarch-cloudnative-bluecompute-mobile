@@ -1,19 +1,19 @@
 PODS:
-  - BMSAnalytics (1.0.2):
-    - BMSCore (= 1.0.3)
-  - BMSAnalyticsAPI (1.0.1)
-  - BMSCore (1.0.3):
-    - BMSAnalyticsAPI (= 1.0.1)
+  - BMSAnalytics (2.2.0):
+    - BMSCore (~> 2.1)
+  - BMSAnalyticsAPI (2.2.0)
+  - BMSCore (2.2.0):
+    - BMSAnalyticsAPI (~> 2.2)
 
 DEPENDENCIES:
   - BMSAnalytics
-  - BMSCore (~> 1.0.3)
+  - BMSCore
 
 SPEC CHECKSUMS:
-  BMSAnalytics: 473f0edbb877e0dc50d8b82952ada35f569b4c42
-  BMSAnalyticsAPI: 50f5cec71a5ad0a9af232a833d6d37c2abda54ac
-  BMSCore: c95e39a4a115fd6fc26496b1473935df82a6bfa3
+  BMSAnalytics: 58ceebea7d929db5811b9e3c51282480b39622c2
+  BMSAnalyticsAPI: 2dae02bc3321b944ae947a7d2f0f009d8035f8e7
+  BMSCore: 13febb1f39d0dff611d453bd0b75349bbbe1eba0
 
-PODFILE CHECKSUM: 869f45562ef1f9c56e04579a5cf63d7ad91e0200
+PODFILE CHECKSUM: 4fd7dde5841c293d22aa864f7176d6264f718b52
 
-COCOAPODS: 1.1.0.beta.1
+COCOAPODS: 1.1.1

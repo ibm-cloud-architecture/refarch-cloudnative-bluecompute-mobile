@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Prepare Bluemix Mobile Analytics Service")
         let appName = "BlueCompute App"
         
-        BMSClient.sharedInstance.initializeWithBluemixAppRoute(nil, bluemixAppGUID: nil, bluemixRegion: BMSClient.REGION_US_SOUTH) //You can change the region
-        Analytics.initializeWithAppName(appName, apiKey: mobileanalyticKey, deviceEvents: DeviceEvent.LIFECYCLE)
+        BMSClient.sharedInstance.initialize(bluemixRegion: BMSClient.Region.usSouth) // You can change the region
+        Analytics.initialize(appName: appName, apiKey: mobileanalyticKey, hasUserContext: true, deviceEvents: .lifecycle, .network)
         
         // set HTTP object to AppDelegate
         self.http = Http()
