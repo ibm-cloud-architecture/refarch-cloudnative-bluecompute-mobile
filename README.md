@@ -15,12 +15,21 @@ The BlueCompute app consists of an iOS and Android version. The iOS application 
 
 Note this section requires an Apple computer running MacOS with Apple Xcode IDE installed.
 
-First Install the SDK:  
- `$ cd iOS/BlueComputeApp`  
- `$ pod install` 
+**First, install the project dependencies**:
+  ```
+  $ cd iOS/BlueComputeApp
+  $ pod install
+  ```
+The commands above will create/overwrite the **`BlueComputeApp.xcworkspace`** file. This file contains 2 projects:
+- The `BlueComputeApp` project, which holds the iOS app code.
+- The `Pods` project, which holds the dependency libraries (known as `Pods`) for the iOS code, such as `BMSCore` and `BMSAnalytics`.
 
-1. In Finder, navigate to the folder iOS/BlueComputeApp in the GIT repository.
-2. Double click the "BlueComputeApp.xcodeproj" file to open the iOS project in Xcode.
+**Now proceed with running the application**:
+
+1. In Finder, navigate to the folder iOS/BlueComputeApp in the git repository.
+2. Double click the **`BlueComputeApp.xcworkspace`** file to open the iOS project in Xcode.
+  - If Xcode prompts you to convert code syntax to Swift 3, please press **`Later`** to prevent compilation errors.
+  ![Swift 3](static/imgs/convert-to-swift.png?raw=true)
 3. You need to specify the API endpoint configuration for your Bluemix API Connect deployment.  Edit the BlueComputeApp / Supporting Files / Config.plist file. The Config.plist file contains all of the API endpoint URLs as well as the clientId registered earlier in Developer Portal.
 
   ![API Running](static/imgs/bluemix_19.png?raw=true)
