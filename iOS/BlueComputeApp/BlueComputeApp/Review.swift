@@ -14,22 +14,21 @@ class Review:NSObject {
     var comments: String
     var email: String
     var name: String
-    var id: String
     
-    init (itemID: Int, itemRating: Double, comments: String, email: String, name: String, id: String) {
+    init (itemID: Int, itemRating: Double, comments: String, email: String, name: String) {
         self.itemID = itemID
         self.itemRating = itemRating
         self.comments = comments
         self.email = email
         self.name = name
-        self.id = id
+        //self.id = id
         
         super.init()
     }
     
     convenience override init() {
      
-            self.init(itemID: 200, itemRating: 4,  comments: "Nice", email: "a@b.c", name: "johndoe", id: "3")
+            self.init(itemID: 200, itemRating: 4,  comments: "Nice", email: "a@b.c", name: "johndoe")
     }
 
 }
