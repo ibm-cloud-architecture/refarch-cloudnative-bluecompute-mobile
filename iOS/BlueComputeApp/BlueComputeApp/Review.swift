@@ -27,8 +27,7 @@ class Review:NSObject {
     }
     
     convenience override init() {
-     
-            self.init(itemID: 200, itemRating: 4,  comments: "Nice", email: "a@b.c", name: "johndoe")
+        
+        self.init(itemID: 200, itemRating: 4,  comments: "Nice", email: "a@b.c", name: "johndoe")
     }
-
 }

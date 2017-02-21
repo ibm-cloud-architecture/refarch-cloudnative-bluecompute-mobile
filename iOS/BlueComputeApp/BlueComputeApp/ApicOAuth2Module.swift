@@ -11,11 +11,9 @@ import Foundation
 import UIKit
 
 /**
-An OAuth2Module subclass specific to 'Facebook' authorization
-*/
+ An OAuth2Module subclass specific to 'Facebook' authorization
+ */
 public class ApicOAuth2Module: OAuth2Module {
-    
-    
     /**
      Request an authorization code.
      
@@ -115,7 +113,7 @@ public class ApicOAuth2Module: OAuth2Module {
      :param: completionHandler A block object to be executed when the request operation finishes.
      */
     override public func exchangeAuthorizationCodeForAccessToken(code: String, completionHandler: (AnyObject?, NSError?) -> Void) {
-      
+        
         let accessToken: String = code
         
         //TODO: Need to add support to retrieve and process refreshToken and refresh internal
@@ -135,7 +133,7 @@ public class ApicOAuth2Module: OAuth2Module {
         // extract the code from the URL
         //let code = self.parametersFromQueryString(url?.query)["code"]
         
-        //IBM APIC returns the access code and other parameer after a # instead of ? 
+        //IBM APIC returns the access code and other parameer after a # instead of ?
         // Manually convert the char here in order to query parameter in Swift
         let origUrlStr = "\(url)"
         let parsedUrl = origUrlStr.stringByReplacingOccurrencesOfString("#", withString: "?")
@@ -178,5 +176,5 @@ public class ApicOAuth2Module: OAuth2Module {
             return ["authorization":"Bearer \(self.oauth2Session.accessToken!)", "x-ibm-client-id":clientId]
         }
     }
-
+    
 }

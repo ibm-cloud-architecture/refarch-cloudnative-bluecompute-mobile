@@ -29,7 +29,7 @@ class ItemsViewController: UITableViewController {
                 
                 let appDelegate : AppDelegate = AppDelegate().sharedInstance()
                 appDelegate.userDefaults.setObject(item.id, forKey: "currentItemId")
-
+                
             }
         }
     }
@@ -40,7 +40,7 @@ class ItemsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView,
                             cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
+        
         // Get a new or recycled cell
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell",forIndexPath: indexPath) as! ItemCell
         
@@ -60,28 +60,27 @@ class ItemsViewController: UITableViewController {
         let appDelegate : AppDelegate = AppDelegate().sharedInstance()
         let clientId: String = appDelegate.userDefaults.objectForKey("clientId") as! String
         request.setValue(clientId, forHTTPHeaderField: "x-ibm-client-id")
-                                
+        
         var imageData: NSData!
         // Using semaphore to force Sync call to get the image
         let semaphore = dispatch_semaphore_create(0)
-                                
+        
         try! NSURLSession.sharedSession().dataTaskWithRequest(request) { (responseData, _, _) -> Void in
             imageData = responseData! //treat optionals properly
             dispatch_semaphore_signal(semaphore)
-        }.resume()
-                                
+            }.resume()
+        
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
-                                
+        
         cell.itemImage.image = UIImage(data: imageData)
-
+        
         return cell
-    
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let appDelegate : AppDelegate = AppDelegate().sharedInstance()
         self.itemRestUrl = appDelegate.userDefaults.objectForKey("itemRestUrl") as! String
@@ -100,8 +99,6 @@ class ItemsViewController: UITableViewController {
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
-        
-    
     }
     
     func listInventory(url: String, parameters: [String: AnyObject]?) {
@@ -114,7 +111,6 @@ class ItemsViewController: UITableViewController {
             } else {
                 
                 do {
-                    
                     
                     let resArry = response as! NSArray
                     for respItem in resArry {
@@ -132,6 +128,6 @@ class ItemsViewController: UITableViewController {
             }
         })
     }
-
+    
     
 }

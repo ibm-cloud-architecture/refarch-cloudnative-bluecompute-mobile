@@ -44,8 +44,6 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         
         let appDelegate : AppDelegate = AppDelegate().sharedInstance()
         let itemRestUrl = appDelegate.userDefaults.objectForKey("itemRestUrl") as! String
-        
-        
         let imageUrl = itemRestUrl + "/" + self.item.image
         let request = NSMutableURLRequest(URL: NSURL(string: imageUrl)!)
         
@@ -104,10 +102,10 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
                     
                     for respItem in resArry {
                         
-                       let newReview = Review(itemID: respItem.objectForKey("itemId") as! Int, itemRating: respItem.objectForKey("rating") as! Double, comments: respItem.objectForKey("comment") as! String, email: respItem.objectForKey("reviewer_email") as! String, name: respItem.objectForKey("reviewer_name") as! String, id: respItem.objectForKey("_Id") as! String)
+                        let newReview = Review(itemID: respItem.objectForKey("itemId") as! Int, itemRating: respItem.objectForKey("rating") as! Double, comments: respItem.objectForKey("comment") as! String, email: respItem.objectForKey("reviewer_email") as! String, name: respItem.objectForKey("reviewer_name") as! String)
                         
-                       self.reviewList.append(newReview)
-                       self.reviewTable.reloadData()
+                        self.reviewList.append(newReview)
+                        self.reviewTable.reloadData()
                     }
                     
                 }
@@ -118,7 +116,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
             }
         })
     }
-
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -129,10 +127,10 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         
         if segue.identifier == "ShowReview" {
             //figure which row was tapped
-
-                let navigationController = segue.destinationViewController as! UINavigationController
-                let addReviewController = navigationController.childViewControllers[0] as! AddReviewController
-                addReviewController.itemId = item.id
+            
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let addReviewController = navigationController.childViewControllers[0] as! AddReviewController
+            addReviewController.itemId = item.id
         }
     }
     
@@ -145,7 +143,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     func tableView(tableView: UITableView,
-                            cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+                   cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         // Get a new or recycled cell
         let cell = tableView.dequeueReusableCellWithIdentifier("ReviewCell",forIndexPath: indexPath) as! ReviewCell
@@ -160,12 +158,9 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
             cell.name.text = review.name
             cell.rating.rating = Double(review.itemRating)
             cell.comments.text = review.comments
-                                }
-                                
-
-        return cell
+        }
         
+        
+        return cell
     }
-    
-    
 }

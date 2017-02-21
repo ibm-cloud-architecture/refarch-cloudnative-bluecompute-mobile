@@ -45,9 +45,11 @@
 		88BE50891D066AC30094A262 /* ApicOAuth2Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE50881D066AC30094A262 /* ApicOAuth2Module.swift */; };
 		88BFD22E1D75CE66008382B1 /* BMSAnalyticsAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BFD22C1D75CE66008382B1 /* BMSAnalyticsAPI.framework */; };
 		88BFD22F1D75CE66008382B1 /* BMSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BFD22D1D75CE66008382B1 /* BMSCore.framework */; };
+		B0C82D514794FF5C35C6CE18 /* Pods_BlueComputeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF0C502661AB5FD3A82CBE4 /* Pods_BlueComputeApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4FF0C502661AB5FD3A82CBE4 /* Pods_BlueComputeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueComputeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		832CBC581CFEA27600601D5C /* BlueComputeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueComputeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		832CBC5B1CFEA27600601D5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		832CBC601CFEA27600601D5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,6 +93,8 @@
 		88ED9F151D75CAFC0029021D /* BMSAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BMSAnalytics.framework; path = "Pods/../build/Debug-iphoneos/BMSAnalytics.framework"; sourceTree = "<group>"; };
 		88ED9F161D75CAFC0029021D /* BMSAnalyticsAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BMSAnalyticsAPI.framework; path = "Pods/../build/Debug-iphoneos/BMSAnalyticsAPI.framework"; sourceTree = "<group>"; };
 		88ED9F171D75CAFC0029021D /* BMSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BMSCore.framework; path = "Pods/../build/Debug-iphoneos/BMSCore.framework"; sourceTree = "<group>"; };
+		98FE1FB2A458FA9C0093B0D3 /* Pods-BlueComputeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueComputeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueComputeApp/Pods-BlueComputeApp.release.xcconfig"; sourceTree = "<group>"; };
+		BFC53EE810BF3F788C641471 /* Pods-BlueComputeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueComputeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueComputeApp/Pods-BlueComputeApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			files = (
 				88BFD22E1D75CE66008382B1 /* BMSAnalyticsAPI.framework in Frameworks */,
 				88BFD22F1D75CE66008382B1 /* BMSCore.framework in Frameworks */,
+				B0C82D514794FF5C35C6CE18 /* Pods_BlueComputeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +120,7 @@
 				832CBC5A1CFEA27600601D5C /* BlueComputeApp */,
 				832CBC591CFEA27600601D5C /* Products */,
 				F9421487247B4B3CCD3D2B4F /* Frameworks */,
+				872595FA97D44FF55D571F82 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +196,15 @@
 			path = Cosmos;
 			sourceTree = "<group>";
 		};
+		872595FA97D44FF55D571F82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BFC53EE810BF3F788C641471 /* Pods-BlueComputeApp.debug.xcconfig */,
+				98FE1FB2A458FA9C0093B0D3 /* Pods-BlueComputeApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		88BA54551D00C3A10013A68F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +222,7 @@
 				88ED9F151D75CAFC0029021D /* BMSAnalytics.framework */,
 				88ED9F161D75CAFC0029021D /* BMSAnalyticsAPI.framework */,
 				88ED9F171D75CAFC0029021D /* BMSCore.framework */,
+				4FF0C502661AB5FD3A82CBE4 /* Pods_BlueComputeApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,9 +234,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 832CBC6A1CFEA27600601D5C /* Build configuration list for PBXNativeTarget "BlueComputeApp" */;
 			buildPhases = (
+				DD226CD3B69A967DA9C78AC2 /* [CP] Check Pods Manifest.lock */,
 				832CBC541CFEA27600601D5C /* Sources */,
 				832CBC551CFEA27600601D5C /* Frameworks */,
 				832CBC561CFEA27600601D5C /* Resources */,
+				EB36E9673B7F55AB000218CA /* [CP] Embed Pods Frameworks */,
+				01E760C82E501BAA6571798F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,6 +296,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01E760C82E501BAA6571798F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueComputeApp/Pods-BlueComputeApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD226CD3B69A967DA9C78AC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB36E9673B7F55AB000218CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueComputeApp/Pods-BlueComputeApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		832CBC541CFEA27600601D5C /* Sources */ = {
@@ -430,6 +497,7 @@
 		};
 		832CBC6B1CFEA27600601D5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFC53EE810BF3F788C641471 /* Pods-BlueComputeApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -450,6 +518,7 @@
 		};
 		832CBC6C1CFEA27600601D5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98FE1FB2A458FA9C0093B0D3 /* Pods-BlueComputeApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

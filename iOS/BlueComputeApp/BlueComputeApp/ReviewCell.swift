@@ -9,7 +9,6 @@
 import UIKit
 
 class ReviewCell: UITableViewCell {
-
     @IBOutlet var name: UILabel!
     @IBOutlet var comments: UILabel!
     @IBOutlet var rating: CosmosView!

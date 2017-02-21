@@ -31,7 +31,7 @@ class AddReviewController: UIViewController, UITextViewDelegate {
         self.review.name = reviewerName!.text!
         
         print("review object \(self.review.itemRating) with name: \(self.review.name) with comment: \(self.review.comments)")
-     
+        
         //Prepare REST call to APIC
         let appDelegate : AppDelegate = AppDelegate().sharedInstance()
         //let userDefaults = appDelegate.userDefaults as? NSUserDefaults
@@ -81,7 +81,7 @@ class AddReviewController: UIViewController, UITextViewDelegate {
             let apicConfig = ApicConfig(
                 clientId: clientId,
                 scopes:["review"])
-
+            
             let gdModule = ApicOAuth2Module(config: apicConfig, session: UntrustedMemoryOAuth2Session(accountId: "ACCOUNT_FOR_CLIENTID_\(apicConfig.clientId)"))
             
             AppDelegate().sharedInstance().http.authzModule = gdModule
@@ -97,7 +97,7 @@ class AddReviewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
-       textView.text = ""
+        textView.text = ""
     }
     
     func postReviews(url: String, parameters: [String: AnyObject]?) {
@@ -132,9 +132,8 @@ class AddReviewController: UIViewController, UITextViewDelegate {
                 // Set Authorization status
                 let appDelegate : AppDelegate = AppDelegate().sharedInstance()
                 appDelegate.userDefaults.setObject("authorized", forKey: "authorizationStatus")
-
+                
             }
         })
     }
-
 }
