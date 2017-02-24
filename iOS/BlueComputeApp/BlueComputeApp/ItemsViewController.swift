@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import KFSwiftImageLoader
 
 class ItemsViewController: UITableViewController {
     
     var http: Http!
     var itemRestUrl = ""
+    var imagesRestUrl = ""
     
     var storeItems: [Item] = []
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //If triggered segue is show item
+        print("Segue identifier: \(segue.identifier)")
         
         if segue.identifier == "ShowItem" {
             //figure which row was tapped
@@ -24,7 +27,7 @@ class ItemsViewController: UITableViewController {
                 // Get item associated with this row and pass it along
                 
                 let item = storeItems[row]
-                let detailViewController = segue.destinationViewController as! DetailViewController
+                let detailViewController = segue.destinationViewController as! DetailTableViewController
                 detailViewController.item = item
                 
                 let appDelegate : AppDelegate = AppDelegate().sharedInstance()
@@ -53,26 +56,10 @@ class ItemsViewController: UITableViewController {
         cell.priceLabel.text = "$\(item.price)"
         
         // Retrieve image from Server store
-        let imageUrl = self.itemRestUrl + "/" + item.image
-        let request = NSMutableURLRequest(URL: NSURL(string: imageUrl)!)
+        let imageUrl = self.imagesRestUrl + "/" + item.image
         
-        //Set the API clientId header
-        let appDelegate : AppDelegate = AppDelegate().sharedInstance()
-        let clientId: String = appDelegate.userDefaults.objectForKey("clientId") as! String
-        request.setValue(clientId, forHTTPHeaderField: "x-ibm-client-id")
-        
-        var imageData: NSData!
-        // Using semaphore to force Sync call to get the image
-        let semaphore = dispatch_semaphore_create(0)
-        
-        try! NSURLSession.sharedSession().dataTaskWithRequest(request) { (responseData, _, _) -> Void in
-            imageData = responseData! //treat optionals properly
-            dispatch_semaphore_signal(semaphore)
-            }.resume()
-        
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
-        
-        cell.itemImage.image = UIImage(data: imageData)
+        // Load images asynchronously
+        cell.itemImage.loadImageFromURL(NSURL(string: imageUrl)!)
         
         return cell
         
@@ -84,6 +71,7 @@ class ItemsViewController: UITableViewController {
         
         let appDelegate : AppDelegate = AppDelegate().sharedInstance()
         self.itemRestUrl = appDelegate.userDefaults.objectForKey("itemRestUrl") as! String
+        self.imagesRestUrl = appDelegate.userDefaults.objectForKey("imageRestUrl") as! String
         let itemsEndpoint = self.itemRestUrl + "/api/items"
         print("Item REST endpoint is : \(itemsEndpoint)")
         

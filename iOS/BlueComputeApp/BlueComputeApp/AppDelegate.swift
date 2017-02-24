@@ -21,8 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist")
         let dict = NSDictionary(contentsOfFile: path!)
-        
+
         let itemRestUrl: String =  dict!.objectForKey("itemRestUrl") as! String
+        let imageRestUrl: String =  dict!.objectForKey("imageRestUrl") as! String
         let reviewRestUrl: String =  dict!.objectForKey("reviewRestUrl") as! String
         let oAuthRestUrl: String = dict!.objectForKey("oAuthRestUrl") as! String
         let clientId: String = dict!.objectForKey("clientId") as! String
@@ -40,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.http = Http()
         
         self.userDefaults.setObject(itemRestUrl, forKey: "itemRestUrl")
+        self.userDefaults.setObject(imageRestUrl, forKey: "imageRestUrl")
         self.userDefaults.setObject(reviewRestUrl, forKey: "reviewRestUrl")
         self.userDefaults.setObject(oAuthRestUrl, forKey: "oAuthRestURL")
         self.userDefaults.setObject(clientId, forKey: "clientId")

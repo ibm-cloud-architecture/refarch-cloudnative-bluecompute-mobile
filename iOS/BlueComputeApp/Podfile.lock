@@ -4,16 +4,19 @@ PODS:
   - BMSAnalyticsAPI (2.2.0)
   - BMSCore (2.2.0):
     - BMSAnalyticsAPI (~> 2.2)
+  - KFSwiftImageLoader (2.0.1)
 
 DEPENDENCIES:
   - BMSAnalytics
   - BMSCore
+  - KFSwiftImageLoader (= 2.0.1)
 
 SPEC CHECKSUMS:
   BMSAnalytics: 58ceebea7d929db5811b9e3c51282480b39622c2
   BMSAnalyticsAPI: 2dae02bc3321b944ae947a7d2f0f009d8035f8e7
   BMSCore: 13febb1f39d0dff611d453bd0b75349bbbe1eba0
+  KFSwiftImageLoader: a2b8a33a89116c767e7af8d2c109e8c483037b19
 
-PODFILE CHECKSUM: 4fd7dde5841c293d22aa864f7176d6264f718b52
+PODFILE CHECKSUM: cd4daa39beb407c477b1794da85a2b4bffed8003
 
 COCOAPODS: 1.2.0

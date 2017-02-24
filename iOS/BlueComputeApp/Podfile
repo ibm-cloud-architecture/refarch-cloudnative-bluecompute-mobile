@@ -6,4 +6,5 @@ use_frameworks!
 target 'BlueComputeApp' do
   pod 'BMSCore'
   pod 'BMSAnalytics'
+  pod 'KFSwiftImageLoader', '2.0.1'
 end

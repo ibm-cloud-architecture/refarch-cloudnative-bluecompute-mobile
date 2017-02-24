@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D73FE411E5F6A00007C7A52 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D73FE401E5F6A00007C7A52 /* DetailTableViewController.swift */; };
 		832CBC5C1CFEA27600601D5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832CBC5B1CFEA27600601D5C /* AppDelegate.swift */; };
 		832CBC611CFEA27600601D5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832CBC5F1CFEA27600601D5C /* Main.storyboard */; };
 		832CBC631CFEA27600601D5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832CBC621CFEA27600601D5C /* Assets.xcassets */; };
 		832CBC661CFEA27600601D5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832CBC641CFEA27600601D5C /* LaunchScreen.storyboard */; };
 		832CBC6E1CFF3BC200601D5C /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832CBC6D1CFF3BC200601D5C /* ItemsViewController.swift */; };
 		83D911821CFF88AC00AD98E3 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D911811CFF88AC00AD98E3 /* ItemCell.swift */; };
-		83D911841CFF9ACB00AD98E3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D911831CFF9ACB00AD98E3 /* DetailViewController.swift */; };
 		83D911881CFFC54D00AD98E3 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D911871CFFC54D00AD98E3 /* Review.swift */; };
 		83D9118A1CFFCF1200AD98E3 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D911891CFFCF1200AD98E3 /* ReviewCell.swift */; };
 		83D9118C1D00799700AD98E3 /* AddReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D9118B1D00799700AD98E3 /* AddReviewController.swift */; };
@@ -50,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		095987BC70B5DCE3E44F26B3 /* Pods-BlueComputeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueComputeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueComputeApp/Pods-BlueComputeApp.release.xcconfig"; sourceTree = "<group>"; };
+		2D73FE401E5F6A00007C7A52 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		37FEFBC0961B9BB4C74B863D /* Pods_BlueComputeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueComputeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		832CBC581CFEA27600601D5C /* BlueComputeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueComputeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		832CBC5B1CFEA27600601D5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		832CBC671CFEA27600601D5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		832CBC6D1CFF3BC200601D5C /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		83D911811CFF88AC00AD98E3 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		83D911831CFF9ACB00AD98E3 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		83D911871CFFC54D00AD98E3 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		83D911891CFFCF1200AD98E3 /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		83D9118B1D00799700AD98E3 /* AddReviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewController.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 				832CBC641CFEA27600601D5C /* LaunchScreen.storyboard */,
 				832CBC6D1CFF3BC200601D5C /* ItemsViewController.swift */,
 				83D911811CFF88AC00AD98E3 /* ItemCell.swift */,
-				83D911831CFF9ACB00AD98E3 /* DetailViewController.swift */,
+				2D73FE401E5F6A00007C7A52 /* DetailTableViewController.swift */,
 				83D911871CFFC54D00AD98E3 /* Review.swift */,
 				83D911891CFFCF1200AD98E3 /* ReviewCell.swift */,
 				83D9118B1D00799700AD98E3 /* AddReviewController.swift */,
@@ -359,9 +359,9 @@
 				88BE50891D066AC30094A262 /* ApicOAuth2Module.swift in Sources */,
 				83D911B21D00815700AD98E3 /* DateUtils.swift in Sources */,
 				83D9118C1D00799700AD98E3 /* AddReviewController.swift in Sources */,
-				83D911841CFF9ACB00AD98E3 /* DetailViewController.swift in Sources */,
 				83D911B61D00815700AD98E3 /* OAuth2Session.swift in Sources */,
 				83D911A61D00815700AD98E3 /* AuthzModule.swift in Sources */,
+				2D73FE411E5F6A00007C7A52 /* DetailTableViewController.swift in Sources */,
 				83D911B81D00815700AD98E3 /* OpenIDClaim.swift in Sources */,
 				832CBC6E1CFF3BC200601D5C /* ItemsViewController.swift in Sources */,
 				832CBC5C1CFEA27600601D5C /* AppDelegate.swift in Sources */,

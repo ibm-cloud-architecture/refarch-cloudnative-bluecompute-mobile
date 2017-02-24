@@ -89,7 +89,7 @@ class AddReviewController: UIViewController, UITextViewDelegate {
             // Initiate the OAuth flow
             //let appDelegate : AppDelegate = AppDelegate().sharedInstance()
             var oAuthRestUrl: String = appDelegate.userDefaults.objectForKey("oAuthRestURL") as! String
-            oAuthRestUrl += "/api/reviews/oauth"
+            oAuthRestUrl += "/oath20/authorize"
             print("OAuth REST endpoint is : \(oAuthRestUrl)")
             
             self.initOauth(oAuthRestUrl, parameters: nil)
