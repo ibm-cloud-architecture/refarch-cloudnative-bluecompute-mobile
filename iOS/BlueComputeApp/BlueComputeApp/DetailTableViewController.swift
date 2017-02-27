@@ -57,8 +57,6 @@ class DetailTableViewController: UITableViewController, UINavigationControllerDe
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        self.tableView.reloadData()
     }
     
     func listReviews(url: String, parameters: [String: AnyObject]?) {
@@ -73,14 +71,28 @@ class DetailTableViewController: UITableViewController, UINavigationControllerDe
         let session = NSURLSession.sharedSession()
         
         let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-            if (error != nil) {
+            if error != nil {
                 print(error)
                 return
             }
+            
+            if data == nil {
+                print("No review data")
+                return
+            }
+            
             print("the data: \(data)")
             do {
-                let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options:[]) as! NSArray
-                print("Array: \(jsonArray)")
+                
+                guard let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSArray else {
+                    print()
+                    throw NSError(
+                        domain: "Getting Review List",
+                        code: -1,
+                        userInfo: [
+                            "data": (try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary)!
+                        ])
+                }
                 
                 for respItem in jsonArray {
                     // Put empty values if a field is missing
@@ -97,15 +109,18 @@ class DetailTableViewController: UITableViewController, UINavigationControllerDe
                     
                     self.reviewList.append(newReview)
                 }
-            }
-            catch {
-                print("Error: \(error)")
+                
+                self.tableView.reloadData()
+ 
+ 
+            } catch let error as NSError {
+                print("Error: \(error.domain), \(error.code)")
+                print("error.userInfo: \(error.userInfo["data"])")
             }
         })
         
         dataTask.resume()
     }
-    
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 132.0
