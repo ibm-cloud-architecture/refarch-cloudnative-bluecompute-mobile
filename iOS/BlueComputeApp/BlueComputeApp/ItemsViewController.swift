@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 import KFSwiftImageLoader
 
 class ItemsViewController: UITableViewController {
@@ -91,31 +92,34 @@ class ItemsViewController: UITableViewController {
     
     func listInventory(url: String, parameters: [String: AnyObject]?) {
         print("calling listInventory")
+        HUD.show(HUDContentType.Progress)
         
         self.http.request(.GET, path: url, parameters: parameters, completionHandler: {(response, error) in
             // handle response
             if (error != nil) {
                 print("Error \(error!.localizedDescription)")
-            } else {
+                HUD.flash(HUDContentType.Error, delay: 1.0)
+                return
+            }
+            
+            let resArry = response as! NSArray
+            for respItem in resArry {
+                let newItem = Item(
+                    name: respItem.objectForKey("name") as! String,
+                    desc: respItem.objectForKey("description") as! String,
+                    altImage: respItem.objectForKey("imgAlt") as? String,
+                    price: respItem.objectForKey("price") as! Int,
+                    id: respItem.objectForKey("id") as! Int,
+                    image: respItem.objectForKey("img") as! String)
                 
-                do {
-                    
-                    let resArry = response as! NSArray
-                    for respItem in resArry {
-                        
-                        let newItem = Item(name: respItem.objectForKey("name") as! String, desc: respItem.objectForKey("description") as! String, altImage: respItem.objectForKey("imgAlt") as? String, price: respItem.objectForKey("price") as! Int, id: respItem.objectForKey("id") as! Int, image: respItem.objectForKey("img") as! String)
-                        self.storeItems.append(newItem)
-                        self.tableView.reloadData()
-                    }
-                    
-                }
-                catch {
-                    print(error)
-                }
+                self.storeItems.append(newItem)
                 
+                dispatch_async(dispatch_get_main_queue()) {
+                    print("Refreshing tableview")
+                    HUD.hide(animated: true)
+                    self.tableView.reloadData()
+                }
             }
         })
     }
-    
-    
 }

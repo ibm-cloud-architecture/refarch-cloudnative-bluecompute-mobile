@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 import KFSwiftImageLoader
 
 class DetailTableViewController: UITableViewController, UINavigationControllerDelegate {
@@ -17,17 +18,22 @@ class DetailTableViewController: UITableViewController, UINavigationControllerDe
     var finalreviewUrl: String?
     var imageURL: NSURL?
     var appDelegate : AppDelegate
+    var retries: Int = 0
+    var firstLoad: Bool = true
+    var pressedCancel: Bool = false
     
     required init?(coder aDecoder: NSCoder) {
         appDelegate = AppDelegate().sharedInstance()
         super.init(coder: aDecoder)
     }
     
-    @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
+        // So we don't spend time waiting for a new review to arrive
+        self.pressedCancel = true
+    }
     
     @IBAction func unwindAndItemDetail(segue: UIStoryboardSegue) {
         print("Back to previous page")
-        
     }
     
     override func viewDidLoad() {
@@ -51,7 +57,12 @@ class DetailTableViewController: UITableViewController, UINavigationControllerDe
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //reload reviews when view appears after closing modal
-        self.listReviews(finalreviewUrl!, parameters: nil)
+        if self.pressedCancel {
+            print("Pressed cancel. Not going to load reviews")
+            self.pressedCancel = false
+        } else {
+            self.listReviews(finalreviewUrl!, parameters: nil)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -60,6 +71,7 @@ class DetailTableViewController: UITableViewController, UINavigationControllerDe
     
     func listReviews(url: String, parameters: [String: AnyObject]?) {
         print("calling listReviews: \(url)")
+        HUD.show(HUDContentType.Progress)
         
         let request = NSMutableURLRequest(URL: NSURL(string: finalreviewUrl!)!)
         
@@ -71,12 +83,18 @@ class DetailTableViewController: UITableViewController, UINavigationControllerDe
         
         let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
             if error != nil {
-                print(error)
+                dispatch_async(dispatch_get_main_queue()) {
+                    print(error)
+                    HUD.flash(HUDContentType.Error, delay: 1.0)
+                }
                 return
             }
             
             if data == nil {
-                print("No review data")
+                dispatch_async(dispatch_get_main_queue()) {
+                    print("No review data")
+                    HUD.hide(animated: true)
+                }
                 return
             }
             
@@ -93,37 +111,64 @@ class DetailTableViewController: UITableViewController, UINavigationControllerDe
                         ])
                 }
                 
-                print("Reviews Array: \(jsonArray)")
+                if (self.reviewList.count != jsonArray.count) || self.firstLoad {
+                    print(String(format: "%@",self.firstLoad ? "First Load" : "Detected newly added review"))
+                    self.refreshUI(jsonArray)
+                    
+                } else if self.retries == 3 {
+                    // Probably no change to reviews database, so stop trying
+                    print("Reached max tries")
+                    self.refreshUI(jsonArray)
+                    
+                } else {
+                    // Waiting for new review to arrive
+                    print("Sleeping for 1 second")
+                    usleep(1000000)
+                    self.retries += 1
+                    self.listReviews(url, parameters: parameters)
+                }
                 
-                for respItem in jsonArray {
-                    // Put empty values if a field is missing
-                    let itemId: Int = respItem["itemId"] as? Int ?? self.item.id
-                    let itemRating: Double = respItem["rating"] as? Double ?? 5
-                    let comments: String = respItem["comment"] as? String ?? "This is a great product"
-                    let name: String = respItem["reviewer_name"] as? String ?? "Fabio"
-                    
-                    let newReview = Review(
-                        itemID: itemId,
-                        itemRating: itemRating,
-                        comments: comments,
-                        name: name)
-                    
-                    self.reviewList.append(newReview)
-                }
- 
-                // Updating UI on the main thread
-                dispatch_async(dispatch_get_main_queue()) {
-                    print("Refreshing tableview")
-                    self.tableView.reloadData()
-                }
-                    
+                
             } catch let error as NSError {
                 print("Error: \(error.domain), \(error.code)")
                 print("error.userInfo: \(error.userInfo["data"])")
+                HUD.flash(HUDContentType.Error, delay: 1.0)
             }
         })
         
         dataTask.resume()
+    }
+    
+    func refreshUI (jsonArray: NSArray) {
+        // Clearing reviewList
+        self.reviewList = []
+        print("Reviews array: \(jsonArray)")
+
+        for respItem in jsonArray {
+            // Put empty values if a field is missing
+            let itemId: Int = respItem["itemId"] as? Int ?? self.item.id
+            let itemRating: Double = respItem["rating"] as? Double ?? 5
+            let comments: String = respItem["comment"] as? String ?? "This is a great product"
+            let name: String = respItem["reviewer_name"] as? String ?? "Fabio"
+            
+            let newReview = Review(
+                itemID: itemId,
+                itemRating: itemRating,
+                comments: comments,
+                name: name)
+            
+            self.reviewList.append(newReview)
+        }
+        
+        self.retries = 0
+        self.firstLoad = false
+        
+        // Updating UI on the main thread
+        dispatch_async(dispatch_get_main_queue()) {
+            print("Refreshing tableview")
+            HUD.hide(animated: true)
+            self.tableView.reloadData()
+        }
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -187,8 +232,6 @@ class DetailTableViewController: UITableViewController, UINavigationControllerDe
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //If triggered segue is show item
-        
         if segue.identifier == "ShowReview" {
             //figure which row was tapped
             
