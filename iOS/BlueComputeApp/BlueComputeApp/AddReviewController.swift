@@ -80,7 +80,7 @@ class AddReviewController: UIViewController, UITextViewDelegate {
             
             let apicConfig = ApicConfig(
                 clientId: clientId,
-                scopes:["review"])
+                scopes:["blue"])
             
             let gdModule = ApicOAuth2Module(config: apicConfig, session: UntrustedMemoryOAuth2Session(accountId: "ACCOUNT_FOR_CLIENTID_\(apicConfig.clientId)"))
             

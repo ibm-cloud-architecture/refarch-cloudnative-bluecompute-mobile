@@ -50,7 +50,6 @@ class DetailTableViewController: UITableViewController, UINavigationControllerDe
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         //reload reviews when view appears after closing modal
         self.listReviews(finalreviewUrl!, parameters: nil)
     }
@@ -94,6 +93,8 @@ class DetailTableViewController: UITableViewController, UINavigationControllerDe
                         ])
                 }
                 
+                print("JSON Array: \(jsonArray)")
+                
                 for respItem in jsonArray {
                     // Put empty values if a field is missing
                     let itemId: Int = respItem["itemId"] as? Int ?? self.item.id
@@ -109,10 +110,13 @@ class DetailTableViewController: UITableViewController, UINavigationControllerDe
                     
                     self.reviewList.append(newReview)
                 }
-                
-                self.tableView.reloadData()
  
- 
+                // Updating UI on the main thread
+                dispatch_async(dispatch_get_main_queue()) {
+                    print("Refreshing tableview")
+                    self.tableView.reloadData()
+                }
+                    
             } catch let error as NSError {
                 print("Error: \(error.domain), \(error.code)")
                 print("error.userInfo: \(error.userInfo["data"])")
