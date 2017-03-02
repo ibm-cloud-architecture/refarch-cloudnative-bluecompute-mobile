@@ -93,7 +93,7 @@ class DetailTableViewController: UITableViewController, UINavigationControllerDe
                         ])
                 }
                 
-                print("JSON Array: \(jsonArray)")
+                print("Reviews Array: \(jsonArray)")
                 
                 for respItem in jsonArray {
                     // Put empty values if a field is missing
