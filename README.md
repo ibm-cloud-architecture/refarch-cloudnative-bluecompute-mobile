@@ -42,7 +42,7 @@ The commands above will create/overwrite the **`BlueComputeApp.xcworkspace`** fi
     - **imageRestUrl:** This is the endpoint that serves the inventory images. It should be in the format of `http(s)://endpoint_host/image`. To obtain an endpoint URL, please provision an instance of the [`BlueCompute iOS BFF`](https://github.com/ibm-cloud-architecture/refarch-cloudnative-bluecompute-bff-ios) service.
 
     The 5 endpoints (minus `imageRestUrl`) should all be the same and is actually your apic-catalog endpoint. For example:
-    https://api.us.apiconnect.ibmcloud.com/gangchenusibmcom-apic/apicstore-catalog
+    https://api.us.apiconnect.ibmcloud.com/gangchenusibmcom-apic/bluecompute
 
 4. Click the "Play" button in the upper left corner to run the application in a simulated iPhone ( be sure to select iphone6 or 6plus).
 5. The application will display a list of items returned from the inventory API. Click on one of them to see the detail of an item.
