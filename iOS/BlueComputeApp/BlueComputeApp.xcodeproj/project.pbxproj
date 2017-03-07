@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D73FE411E5F6A00007C7A52 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D73FE401E5F6A00007C7A52 /* DetailTableViewController.swift */; };
 		832CBC5C1CFEA27600601D5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832CBC5B1CFEA27600601D5C /* AppDelegate.swift */; };
 		832CBC611CFEA27600601D5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832CBC5F1CFEA27600601D5C /* Main.storyboard */; };
 		832CBC631CFEA27600601D5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832CBC621CFEA27600601D5C /* Assets.xcassets */; };
 		832CBC661CFEA27600601D5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832CBC641CFEA27600601D5C /* LaunchScreen.storyboard */; };
 		832CBC6E1CFF3BC200601D5C /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832CBC6D1CFF3BC200601D5C /* ItemsViewController.swift */; };
 		83D911821CFF88AC00AD98E3 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D911811CFF88AC00AD98E3 /* ItemCell.swift */; };
-		83D911841CFF9ACB00AD98E3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D911831CFF9ACB00AD98E3 /* DetailViewController.swift */; };
 		83D911881CFFC54D00AD98E3 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D911871CFFC54D00AD98E3 /* Review.swift */; };
 		83D9118A1CFFCF1200AD98E3 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D911891CFFCF1200AD98E3 /* ReviewCell.swift */; };
 		83D9118C1D00799700AD98E3 /* AddReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D9118B1D00799700AD98E3 /* AddReviewController.swift */; };
@@ -45,9 +45,13 @@
 		88BE50891D066AC30094A262 /* ApicOAuth2Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE50881D066AC30094A262 /* ApicOAuth2Module.swift */; };
 		88BFD22E1D75CE66008382B1 /* BMSAnalyticsAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BFD22C1D75CE66008382B1 /* BMSAnalyticsAPI.framework */; };
 		88BFD22F1D75CE66008382B1 /* BMSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BFD22D1D75CE66008382B1 /* BMSCore.framework */; };
+		A262303066700ADAF403F968 /* Pods_BlueComputeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FEFBC0961B9BB4C74B863D /* Pods_BlueComputeApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		095987BC70B5DCE3E44F26B3 /* Pods-BlueComputeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueComputeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueComputeApp/Pods-BlueComputeApp.release.xcconfig"; sourceTree = "<group>"; };
+		2D73FE401E5F6A00007C7A52 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		37FEFBC0961B9BB4C74B863D /* Pods_BlueComputeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueComputeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		832CBC581CFEA27600601D5C /* BlueComputeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueComputeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		832CBC5B1CFEA27600601D5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		832CBC601CFEA27600601D5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,7 +60,6 @@
 		832CBC671CFEA27600601D5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		832CBC6D1CFF3BC200601D5C /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		83D911811CFF88AC00AD98E3 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		83D911831CFF9ACB00AD98E3 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		83D911871CFFC54D00AD98E3 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		83D911891CFFCF1200AD98E3 /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		83D9118B1D00799700AD98E3 /* AddReviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewController.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		88ED9F151D75CAFC0029021D /* BMSAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BMSAnalytics.framework; path = "Pods/../build/Debug-iphoneos/BMSAnalytics.framework"; sourceTree = "<group>"; };
 		88ED9F161D75CAFC0029021D /* BMSAnalyticsAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BMSAnalyticsAPI.framework; path = "Pods/../build/Debug-iphoneos/BMSAnalyticsAPI.framework"; sourceTree = "<group>"; };
 		88ED9F171D75CAFC0029021D /* BMSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BMSCore.framework; path = "Pods/../build/Debug-iphoneos/BMSCore.framework"; sourceTree = "<group>"; };
+		8AB58A0A684583655A8CA428 /* Pods-BlueComputeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueComputeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueComputeApp/Pods-BlueComputeApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +104,22 @@
 			files = (
 				88BFD22E1D75CE66008382B1 /* BMSAnalyticsAPI.framework in Frameworks */,
 				88BFD22F1D75CE66008382B1 /* BMSCore.framework in Frameworks */,
+				A262303066700ADAF403F968 /* Pods_BlueComputeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72839788D8E67BCCF4194CAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AB58A0A684583655A8CA428 /* Pods-BlueComputeApp.debug.xcconfig */,
+				095987BC70B5DCE3E44F26B3 /* Pods-BlueComputeApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		832CBC4F1CFEA27600601D5C = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +129,7 @@
 				832CBC5A1CFEA27600601D5C /* BlueComputeApp */,
 				832CBC591CFEA27600601D5C /* Products */,
 				F9421487247B4B3CCD3D2B4F /* Frameworks */,
+				72839788D8E67BCCF4194CAD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,7 +152,7 @@
 				832CBC641CFEA27600601D5C /* LaunchScreen.storyboard */,
 				832CBC6D1CFF3BC200601D5C /* ItemsViewController.swift */,
 				83D911811CFF88AC00AD98E3 /* ItemCell.swift */,
-				83D911831CFF9ACB00AD98E3 /* DetailViewController.swift */,
+				2D73FE401E5F6A00007C7A52 /* DetailTableViewController.swift */,
 				83D911871CFFC54D00AD98E3 /* Review.swift */,
 				83D911891CFFCF1200AD98E3 /* ReviewCell.swift */,
 				83D9118B1D00799700AD98E3 /* AddReviewController.swift */,
@@ -207,6 +222,7 @@
 				88ED9F151D75CAFC0029021D /* BMSAnalytics.framework */,
 				88ED9F161D75CAFC0029021D /* BMSAnalyticsAPI.framework */,
 				88ED9F171D75CAFC0029021D /* BMSCore.framework */,
+				37FEFBC0961B9BB4C74B863D /* Pods_BlueComputeApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,9 +234,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 832CBC6A1CFEA27600601D5C /* Build configuration list for PBXNativeTarget "BlueComputeApp" */;
 			buildPhases = (
+				7F859105AC9ECC09ADF0C4D2 /* [CP] Check Pods Manifest.lock */,
 				832CBC541CFEA27600601D5C /* Sources */,
 				832CBC551CFEA27600601D5C /* Frameworks */,
 				832CBC561CFEA27600601D5C /* Resources */,
+				D58E64D1E95E67166AA8EA2A /* [CP] Embed Pods Frameworks */,
+				6FEC35837B64B66805F1A596 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -278,6 +297,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6FEC35837B64B66805F1A596 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueComputeApp/Pods-BlueComputeApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F859105AC9ECC09ADF0C4D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D58E64D1E95E67166AA8EA2A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueComputeApp/Pods-BlueComputeApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		832CBC541CFEA27600601D5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -292,9 +359,9 @@
 				88BE50891D066AC30094A262 /* ApicOAuth2Module.swift in Sources */,
 				83D911B21D00815700AD98E3 /* DateUtils.swift in Sources */,
 				83D9118C1D00799700AD98E3 /* AddReviewController.swift in Sources */,
-				83D911841CFF9ACB00AD98E3 /* DetailViewController.swift in Sources */,
 				83D911B61D00815700AD98E3 /* OAuth2Session.swift in Sources */,
 				83D911A61D00815700AD98E3 /* AuthzModule.swift in Sources */,
+				2D73FE411E5F6A00007C7A52 /* DetailTableViewController.swift in Sources */,
 				83D911B81D00815700AD98E3 /* OpenIDClaim.swift in Sources */,
 				832CBC6E1CFF3BC200601D5C /* ItemsViewController.swift in Sources */,
 				832CBC5C1CFEA27600601D5C /* AppDelegate.swift in Sources */,
@@ -430,9 +497,11 @@
 		};
 		832CBC6B1CFEA27600601D5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AB58A0A684583655A8CA428 /* Pods-BlueComputeApp.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -450,9 +519,11 @@
 		};
 		832CBC6C1CFEA27600601D5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 095987BC70B5DCE3E44F26B3 /* Pods-BlueComputeApp.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",

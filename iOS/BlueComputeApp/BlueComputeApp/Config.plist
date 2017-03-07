@@ -10,6 +10,8 @@
 	<string></string>
 	<key>itemRestUrl</key>
 	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-qa/bluecompute</string>
+	<key>imageRestUrl</key>
+	<string>http://image-endpoint-host/image</string>
 	<key>reviewRestUrl</key>
 	<string>https://api.us.apiconnect.ibmcloud.com/centusibmcom-cloudnative-qa/bluecompute</string>
 	<key>oauthBaseUrl</key>
